@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>String Methods</h1>
+    <script>
+        let operatingSystem = "Microsoft Windows";
+        console.log(operatingSystem.length);
+        console.log(operatingSystem[0]); // first character in the string
+        console.log(operatingSystem[operatingSystem.length-1]); // get the last character of the string
+        console.log(operatingSystem.indexOf("Mac")); // result -1 means not found
+        console.log(operatingSystem.indexOf('soft')); // result in 5, the starting position of that characters
+        console.log(operatingSystem.indexOf('o')); // result in 4 as the position of the first finding
+
+        let email = "john@coding.com"; 
+        const position = email.indexOf('@');
+        console.log(position);
+        const domain = email.slice(position+1); // email.slice(5)   
+        console.log(domain);
+        console.log(email.slice(0,position) ); // email.slice(0, 4)
+        
+        let fullName = "jOhN DoE";
+        console.log(fullName.toLowerCase());
+        console.log(fullName.toUpperCase());
+
+        let newEmail = email.replace("coding.com", "python.com");
+        console.log(email);
+        console.log(newEmail);
+    </script>
+</body>
+</html>

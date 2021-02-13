@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Say How Are You</h4>
+    <label for="language">Select the language</label>
+    <select id="language">
+        <option value="">Select</option>
+        <option value="id">Indonesian</option>
+        <option value="en">English</option>
+        <option value="de">German</option>
+    </select>
+    <p id="greeting"></p>
+    <script>
+        const languageSelection = document.getElementById("language");
+        const greeting = document.getElementById("greeting");
+
+        languageSelection.addEventListener('change', sayGreeting);
+
+        function sayGreeting(){
+            const choice = languageSelection.value;
+            
+            if(choice==="id"){
+                greeting.textContent = "Apa kabar?";
+            }else if(choice==="en"){
+                greeting.textContent = "How are you?";
+            }else if(choice==="de"){
+                greeting.textContent = "Wie geht es dir?"
+            }else{
+                greeting.textContent = "";
+            }
+        }
+    </script>
+</body>
+</html>

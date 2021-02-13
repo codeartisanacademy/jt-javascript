@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Function</h1>  
+
+    <script>
+        function sayHello(){
+            console.log("Hello world");
+        }
+        
+        sayHello();
+
+        function tambah2(x){
+            console.log(x + 2);
+        }
+
+        tambah2(3);
+
+        const sayName = function (){
+            console.log("Hello John");
+        }
+
+        sayName();
+
+        const addOneAndTwo = ()=>{
+            console.log(1+2);
+        }
+
+        addOneAndTwo();
+
+        const multiplyTwoNumbers = (x, y) => console.log(x * y);
+        
+
+        multiplyTwoNumbers(2,3);
+
+        const division = (x,y) => {
+            return x/y;
+        }
+
+        let result = division(4,2);
+
+        console.log(result);
+
+        console.log(division(9,3));
+
+    </script>
+</body>
+</html>

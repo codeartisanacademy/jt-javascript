@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Search for contacts</h1>
+    <div>
+        <form method="get">
+            <input type="text" id="search">
+            <button id="searchButton">Search</button>
+        </form>
+
+        <p id="result"></p>
+    </div>
+    <script>
+        let contacts = ['adi', 'ahmad', 'peter', 'john', 'dave'];
+
+        const inputSearch = document.getElementById("search");
+        const buttonSearch = document.getElementById("searchButton");
+        const result = document.getElementById("result");
+
+        buttonSearch.addEventListener("click", searchContact);
+
+        function searchContact(event){
+            event.preventDefault();
+            if(contacts.includes(inputSearch.value)){
+                result.textContent = "The person is in the contacts";
+            }else{
+                result.textContent = "The person is not in the contacts";
+            }
+        }
+    </script>
+</body>
+</html>

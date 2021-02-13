@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Array Basic</h1>
+    <script>
+        let cities = ["Jakarta", "Kuala Lumpur", "Bangkok", "Berlin"];
+
+        // access the item inside
+        console.log(cities[1]);
+
+        // modify an array item
+        cities[3] = "Singapore";
+        console.log(cities);
+
+        // add item into array
+        cities.push("New York City");
+        console.log(cities);
+
+        // pop
+        cities.pop();
+        console.log(cities);
+
+        cities.shift();
+        console.log(cities);
+
+        cities.unshift("Bandung");
+        console.log(cities);
+
+        cities.splice(1,0,"Cirebon");
+        console.log(cities);
+        // length
+        console.log(cities.length);
+
+        // split to create an array from a string
+        let names = "john, dave, max, jane";
+        let namesArray = names.split(', ');
+        console.log(namesArray.length);
+        console.log(namesArray);
+
+        let relatedTopics = ['sports', 'hobbies', 'music'];
+        console.log(relatedTopics.join(', '));
+
+        // concatenate or combine multiple arrays
+        let initial = [1,2,3];
+        let next = [4,5,6];
+
+        let allNumbers = initial.concat(next);
+        console.log(allNumbers);
+
+        // search an item in an array
+        console.log(namesArray.indexOf("max"));
+        if(namesArray.indexOf("max") != -1){
+            console.log("max is my friend");
+        }else{
+            console.log("He is not my friend");
+        }
+
+        let myBestFriend = false;
+        if(namesArray.includes("dave",2)){
+            console.log("Not my best friend")
+        }else{
+            console.log("My best friend")
+        }
+
+
+    </script>
+</body>
+</html>

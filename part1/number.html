@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Number in JavaScript</h1>
+
+    <script>
+        let independeceYear = 1945;
+        console.log(independeceYear);
+
+        let myScore = 1212.89721;
+        console.log(myScore.toFixed(3)); // to round the decimal points
+
+        let inputNumber = "22";
+        console.log(typeof inputNumber);
+        let inputNumberAsInt = Number(inputNumber);
+        console.log(typeof inputNumberAsInt);
+
+        /* this is a multiple
+        line comments */
+
+        /* number operations */
+        const birthYear = 1990;
+        let currentYear = 2020;
+        let age = currentYear - birthYear;
+        console.log(age);
+
+        let price = 10000;
+        let tax = 15; // in percent
+        let taxRate = tax/100; // division
+
+        let taxAmount = taxRate * price; // multiplication
+
+        let totalPrice = price + taxAmount; // addition
+        console.log(totalPrice);
+
+        let score = 0;
+        score = score + 1;
+        console.log(score);
+        score++;
+        console.log(score);
+        score--;
+        console.log(score);
+        score += 5;
+        console.log(score);
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>String Method Exercise</h1>
+    <p id="fullName">JoHN DOe</p>
+    <ul>
+        <li><a href="#" id="upper">Uppercase</a></li>
+        <li><a href="#" id="lower">Lowercase</a></li>
+    </ul>
+
+    <script>
+        const paragraph = document.getElementById('fullName');
+        const upperLink = document.getElementById('upper');
+        const lowerLink = document.getElementById('lower');
+
+        upperLink.addEventListener('click', makeUpperCase);
+        lowerLink.addEventListener('click', makeLowerCase);
+
+        function makeUpperCase(){
+            paragraph.textContent = paragraph.textContent.toUpperCase();
+        }
+
+        function makeLowerCase(){
+            paragraph.textContent = paragraph.textContent.toLowerCase();
+        }
+    </script>
+</body>
+</html>

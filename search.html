@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Search</h1>
+
+    <script>
+        let cities = ['jakarta', 'bogor', 'bandung', 'surabaya', 'denpasar'];
+
+        console.log(cities.find(city=>city==="jakarta"));
+
+        console.log(cities.includes("semarang"));
+
+        
+        console.log(cities.every(city=>city[0]==="b"));
+        console.log(cities.some(city=>city[0]==="b"));
+
+        cities.forEach(c=>{
+            console.log(c[0].toUpperCase() + c.substr(1));
+        });
+    </script>
+</body>
+</html>

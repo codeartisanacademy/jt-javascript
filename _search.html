@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Search in Array</h1>
+
+    <script>
+        const cities = ['jakarta', 'bogor', 'bandung', 'surabaya', 'semarang'];
+        
+        console.log(cities.find(city=>city[0]==="s"));
+
+        console.log(cities.every(c=>c[0]==='b'));
+
+        console.log(cities.some(c=>c[0]==='b'));
+
+        const citiesWithB = cities.filter(city=>city[0]==='b');
+
+        console.log(citiesWithB);
+
+        const scores = [12, 30, 15, 20, 22, 29];
+
+        const highScores = scores.filter(score=>score > 20);
+
+        console.log(highScores.sort());
+
+        cities.forEach(city=>console.log(city[0].toUpperCase() + city.substr(1)))
+    </script>
+</body>
+</html>

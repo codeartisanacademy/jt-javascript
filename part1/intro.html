@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h3{
+            color:blue;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+    <h3>Hello World</h3>
+    <script>
+        let heading = document.querySelector('h3');
+        
+        heading.addEventListener("click", sayHello);
+
+        function sayHello(){
+            alert("Hello World");
+            heading.style.color = "red";
+        }
+
+    </script>
+</body>
+</html>
