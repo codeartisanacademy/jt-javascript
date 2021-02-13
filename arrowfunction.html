@@ -38,10 +38,12 @@
             console.log(price - (price * (discount/100)));
         }
 
-        const calculateDiscountPrice = (price, discount) => console.log(price - (price * (discount/100)));
+
+        const getEndPrice = (price, discount) => {
+            console.log(price - (price * (discount/100)));
+        }
 
         calculateEndPrice(1000,50);
-        calculateDiscountPrice(8000,10);
 
     </script>
 </body>
