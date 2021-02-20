@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Object in JavaScript</h1>
+    <script>
+        const person = {
+            firstName: "John",
+            lastName: "Doe",
+            age: 30,
+            hobbies: ['soccer', 'reading', 'watching TV'],
+            contact: {
+                email: 'john@gmail.com',
+                phone: '081289189212',
+                address: 'Jl. Cipete Raya 12, Jakarta Selatan'
+            },
+            greet:function(){
+                console.log(`Hello my name is ${this.firstName}, how are you?`)
+            },
+            introduce: function(){
+                console.log(`Hello my name ${this.firstName} ${this.lastName}, i'm ${this.age} years old. I live in ${this.contact.address}`)
+            },
+            born:function(){
+                // i was born in the year 1993
+            }
+        }
+        // dot notation to access the value
+        console.log(person.firstName)
+        console.log(person['lastName'])
+        person.age = 28
+
+        console.log(person.age)
+
+        console.log(`${person.firstName} likes to do: `)
+        for (let x = 0; x < person.hobbies.length; x++){
+            console.log(person.hobbies[x])
+        }
+
+        console.log(person.contact.email);
+        person.greet();
+        person.introduce();
+
+        // Hello my name is John Doe, i'm 28 years old and i live in Jl. cipete raya 12, jakarta selatan
+    </script>
+</body>
+</html>
