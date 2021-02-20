@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Object in JavaScript</h1>
+
+    <script>
+        const john = {
+            fistName: "John", //attribute
+            lastName: "Doe",
+            age: 30,
+            hobbies: ['soccer', 'coding', 'swimming'],
+            bio: function(){
+                console.log(`Hi my name is ${this.fistName} ${this.lastName} and i'm ${this.age} years old.`);
+            }
+        };
+        
+        const mike = {
+            fistName: "Mike",
+            lastName: "Smith",
+            age: 28,
+            hobbies: ['reading', 'writing', 'walking']
+        }
+
+        console.log(john.lastName) // dot notation
+        console.log(mike['lastName'])
+        john['age'] = 32
+        console.log(john.age)
+
+        console.log("John likes: ")
+        for(let x = 0; x < john.hobbies.length; x++){
+            console.log(john.hobbies[x]);
+        }
+        console.log("But John mostly like do " + john.hobbies[0])
+
+        john.bio();
+
+    </script>
+</body>
+</html>
