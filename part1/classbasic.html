@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Class in JavaScript</h1>
+    <script>
+        class Car{
+            constructor(brand, year, color){
+                this.brand = brand;
+                this.year = year;
+                this.color = color;
+            }
+            move(){
+                console.log("moving forward")
+            }
+            turnLeft(){
+                console.log("turning left")
+            }
+            
+            //setter attribute
+            set setColor(value){
+                if(value){
+                    this.color = value;
+                }    
+            }
+            // getter attribute
+            get fullInfo(){
+                return `This is ${this.brand} of year ${this.year}`;
+            }
+        }
+
+        const honda = new Car('honda', 2010, 'yellow');
+        console.log(honda.color);
+        honda.move();
+        honda.setColor = "blue"
+        console.log(honda.color);
+        console.log(honda.fullInfo)
+
+        const toyota = new Car("Toyota", 1990, "white")
+    </script>
+</body>
+</html>

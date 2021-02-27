@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Class in JavaScript</h1>
+    <script>
+        class Car{
+            // constructor method 
+            constructor(brand, year, color){
+                this.brand = brand;
+                this.year = year;
+                this.color = color;
+            }
+
+            move(){
+                console.log("moving forward...");
+            }
+
+            turnLeft(){
+                console.log("turning left");
+            }
+
+            turnRight(){
+                console.log("turning right");
+            }
+
+            //setter
+            set setYear(value){
+                if(Number.isInteger(value)){
+                    this.year = value;
+                }else{
+                    this.year = 2021;
+                }
+            }
+        }
+
+        // object is the one created using the class
+        const honda = new Car(brand="Honda", year=2010, color="Black");
+        console.log(honda.color);
+        honda.move();
+        const toyota = new Car("Toyota", 2011, "White")
+        toyota.move();
+        console.log(toyota.year)
+        // dont assign a value to an attribute directly like this
+        //toyota.year = "2012";
+        console.log(toyota.year)
+        toyota.setYear = 2020;
+        console.log(toyota.year);
+    </script>
+</body>
+</html>

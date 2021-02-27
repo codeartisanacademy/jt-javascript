@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Object Exercise</h1>
+
+    <p>Create an object "car". The object car should have the following attributes:</p>
+    <ul>
+        <li>brand</li>
+        <li>year</li>
+        <li>color</li>
+        <li>function describe to display the brand and year of the car</li>
+        <li>function to move</li>
+        <li>function to turn left</li>
+        <li>function to turn right</li>
+    </ul>
+    <p>
+        Fill each attribute with value. For each function just display in the console like "moving forward".
+    </p>
+    <script>
+        const honda = {
+            brand: "Honda",
+            year: 2020,
+            color: "black",
+            describe: function(){
+                console.log(`This is ${this.brand} from ${this.year}`)
+            },
+            move: function(){
+                console.log("moving forward...")
+            },
+            turnLeft: function(){
+                console.log("turning left...")
+            }
+        }
+        console.log(honda.brand);
+        honda.move();
+
+        const toyota = {
+            brand: "Toyota",
+            year: 2010,
+            color: "White",
+            describe: function(){
+                console.log(`This is ${this.brand} from ${this.year}`)
+            },
+            move: function(){
+                console.log("moving forward...")
+            },
+            turnLeft: function(){
+                console.log("turning left...")
+            }
+        }
+    </script>
+</body>
+</html>
