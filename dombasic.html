@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>DOM Basic</h1>
+        <div id="content">
+            <h2>Hello DOM</h2>
+            <p class="info">you successfully read this important alert message. This example text is going to run a bit longer so that you can see how <strong>Space</strong> within an alert works with this kind of content</p>
+            <p class="info">you successfully read this important alert message. This example text is going to run a bit longer so that you can see how <strong>Space</strong> within an alert works with this kind of content</p>
+        </div>
+        <script>
+            const body = document.getElementsByTagName('body')
+            const content = document.getElementById('content');
+            const infos = document.getElementsByClassName('info');
+            console.log(body);
+            console.log(content);
+            console.log(infos);
+        </script>
+    </body>
+</html>

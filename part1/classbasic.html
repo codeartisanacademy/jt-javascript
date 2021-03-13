@@ -26,6 +26,8 @@
             set setColor(value){
                 if(value){
                     this.color = value;
+                }else{
+                    this.color = "green";
                 }    
             }
             // getter attribute
@@ -37,7 +39,8 @@
         const honda = new Car('honda', 2010, 'yellow');
         console.log(honda.color);
         honda.move();
-        honda.setColor = "blue"
+        // honda.color = "blue"; not the best way to set an attribute
+        honda.setColor = "blue";
         console.log(honda.color);
         console.log(honda.fullInfo)
 

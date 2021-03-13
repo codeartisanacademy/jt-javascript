@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="levelOne">
+        <div class="box" id="first">
+            <h1>Box 1</h1>
+            <p>The paragrap 1</p>
+        </div>
+        <div class="box" id="second">
+            <h1>Box 1</h1>
+            <p>The paragrap 2</p>
+        </div>
+    </div>
+    <script>
+        const parent = document.querySelector('#levelOne');
+        console.log(parent.children)
+        for(let i = 0; i < parent.children.length; i++){
+            console.log(parent.children[i].children);
+        }
+
+        const h1 = document.querySelector('h1');
+        console.log(h1.nextElementSibling);
+
+    </script>
+</body>
+</html>
