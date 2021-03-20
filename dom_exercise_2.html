@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>DOM Exercise 2 - Loop Elements</h1>
+    <ul>
+        <li>Jakarta</li>
+        <li>Bandung</li>
+        <li>Surabaya</li>
+        <li>Medan</li>
+    </ul>
+
+    <script>
+        /* 
+        display in the console each city in the list
+        add style underline for each city in the list
+        */
+       const list = document.getElementsByTagName("li");
+       for(let x = 0; x < list.length; x++){
+           console.log(list[x].innerText);
+           list[x].style.textDecoration = "underline";
+       }
+    </script>
+
+</body>
+</html>
