@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .seen{
+            text-decoration:line-through;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Class Operation</h1>
+    <p class="news available">"Belum ada surat yang resmi ke Pemkot Bekasi dari sana (pemerintah pusat)," kata Sekretaris Dinas Perhubungan Kota Bekasi Enung Nurcholish saat dihubungi Kompas.com pada Sabtu (10/4/2021).</p>
+    <a href="#">Seen</a>
+
+    <script>
+        const paragraph = document.querySelector("p");
+        console.log(paragraph.classList);
+        //paragraph.classList.add("liked");
+        for(let c of paragraph.classList){
+            console.log(c)
+        }
+        //paragraph.classList.remove("liked");
+
+        const removeLink = document.querySelector("a")
+        removeLink.addEventListener("click", ()=>{
+            paragraph.classList.toggle("seen");
+            if(paragraph.classList.contains("seen")){
+                removeLink.innerText = "Read";
+            }else{
+                removeLink.innerText = "Seen";
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+
+    <script defer src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+
+   <script defer>
+
+        
+
+    if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(onSuccess, onFailure);
+    }
+
+    function onSuccess(position){
+        console.log(position);
+        const lat = document.getElementById("lat");
+        const long = document.getElementById("long");
+
+        const mymap = L.map('map').setView([position.coords.latitude, position.coords.longitude], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 13,
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors ',
+            id: 'mapbox/streets-v11',
+            tileSize: 512,
+            zoomOffset: -1
+        }).addTo(mymap);;
+
+        const marker = L.marker([position.coords.latitude, position.coords.longitude]).addTo(mymap);
+        marker.bindPopup("Hello").openPopup();
+
+        var myIcon = L.icon({
+            iconUrl: 'burgermarker.png',
+            iconSize: [24, 24],
+            popupAnchor: [0, 0],
+            shadowSize: [68, 95],
+            shadowAnchor: [22, 94]
+        });
+
+        mymap.on('click', (event)=>{
+            console.log(event)
+            L.marker([event.latlng.lat, event.latlng.lng], {title:"Test", icon:myIcon}).addTo(mymap).bindPopup("Hello").openPopup();
+        });
+        lat.textContent = position.coords.latitude;
+        long.textContent = position.coords.longitude;
+    }
+
+    
+
+    function onFailure(){
+        alert("You didn't agree with the location usage");
+    }
+</script>
+  
+   <style>
+       #map{
+           height:400px;
+       }
+   </style>
+</head>
+<body>
+    <h1>Geo Location API</h1>
+    <ul>
+        <li>Latitude: <span id="lat"></span></li>
+        <li>Longitude: <span id="long"></span></li>
+    </ul>
+    <div id="map">
+
+    </div>
+    
+    
+</body>
+</html>

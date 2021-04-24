@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Local Storage</h1>
+    <ul>
+        <li>First Name: <span id="data-firstname"></span></li>
+    </ul>
+    <script>
+        // web browser API
+        // localStorage.clear()
+        
+        // key value --> key:value, name:"wahyudi"
+        localStorage.setItem("firstName", "Jack");
+        localStorage.setItem("city", "Jakarta");
+        console.log(localStorage.length);
+        console.log(localStorage);
+        const dataFirstName = document.querySelector("#data-firstname");
+        dataFirstName.innerText = localStorage.getItem("firstName");
+    </script>
+</body>
+</html>
