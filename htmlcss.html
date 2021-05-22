@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family:Arial, Helvetica, sans-serif;
+            background-color:rgb(0, 0, 255);
+            color:white;
+        }
+        li{
+            color:red;
+        }
+        #apple{
+            color:darkturquoise;
+        }
+        .yellow{
+            color:yellow;
+            text-decoration: underline;
+        }
+        div{
+            background-color:brown;
+            width:400px;
+            text-align:center;
+            padding: 20px;
+            border:solid 3px black;
+            margin:30px;
+        }
+        #container{
+            display:flex;
+        }
+    </style>
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+    <div id="container">
+        <div><h3>one</h3></div>
+        <div><h3>two</h3></div>
+        <div><h3>three</h3></div>
+    </div>
+    <!-- div to layout the page -->
+    <div>
+        <h4>Hello!</h4>
+    </div>
+    <!-- block element push the next content to the next line -->
+    <p id="first-p">This is a paragraph</p>
+    <p class="yellow">Another paragraph</p>
+    <!-- inline element -->
+    <span style="color: chocolate; text-decoration:underline">This is a span</span>
+    <span >and also another span</span>
+    <h1>Heading</h1>
+    <a href="http://google.com">Google</a>
+    <img src="burgermarker.png" >
+    <ul>
+        <li id="apple">apple</li>
+        <li>orange</li>
+    </ul>
+    <ol>
+        <li>Indonesia</li>
+        <li>Singapore</li>
+    </ol>
+    <table>
+        <thead>
+            <tr>
+                <th>Nr.</th>
+                <th>Name</th>
+                <th>Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="yellow">1</td>
+                <td class="yellow">Budi</td>
+                <td class="yellow">Jakarta</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Amir</td>
+                <td>Bandung</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

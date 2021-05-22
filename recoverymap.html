@@ -25,8 +25,9 @@
     <div class="row vh-100">
         <div class="col-sm-3 bg-dark text-white p-4 ">
             <h3 class="text-center">Distaser Recovery Map</h3>
-            <div>
-                <form action="">
+            <div class="card my-4" id="form-container">
+                <div class="card-body text-dark">
+                    <form action="" id="mapform" class="form">
                     <div class="mb-2">
                         <label for="notes" class="form-label">Notes</label>
                         <input type="text" class="form-control" id="notes">
@@ -40,11 +41,36 @@
                             <option value="3">Hospital</option>
                         </select>
                     </div>
-                    <div>
-                        <button class="btn btn-primary">Submit</button>
-                    </div>
+                
                 </form>
-            </div>
+                </div>
+                
+            </div> <!-- end of card form --> 
+            
+            <!-- <div id="locations" class="my-4">
+                <div class="card bg-success mb-2">
+                    <div class="card-body">
+                        <h5 class="card-title">RS. Fatmawati</h5>
+                    </div>
+                </div>
+                <div class="card bg-danger mb-2">
+                    <div class="card-body">
+                        <h5 class="card-title">Banjir Cipete</h5>
+                    </div>
+                </div>
+                <div class="card bg-danger mb-2">
+                    <div class="card-body">
+                        <h5 class="card-title">Jembatan Rusak</h5>
+                    </div>
+                </div>
+                <div class="card bg-warning mb-2">
+                    <div class="card-body">
+                        <h5 class="card-title">Shelter Makanan</h5>
+                    </div>
+                </div>
+            </div>  -->
+            
+            
         </div>
         <div class="col-sm-9">
             <div id="map"></div>
