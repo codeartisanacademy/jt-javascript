@@ -7,11 +7,38 @@ const spotName = document.getElementById('spotName');
 const locationsContainer = document.getElementById('locations')
 const locationType = document.getElementById('location-type');
 let locationTypeClass;
-
+// create global array
+let locations = [];
 // create global var for map
 let mymap;
 // create global var for map event
 let mapEvent;
+
+const resetForm = function() {
+    spotName.value = "";
+    locationType.value = "";
+
+}
+
+const renderLocations = function(){
+    if(locationType.value=="1"){
+        locationTypeClass = "bg-danger";
+    }else if(locationType.value=="2"){
+        locationTypeClass = "bg-warning";
+    }else{
+        locationTypeClass = "bg-success";
+    }
+    
+    let locationHtml = `
+        <div class="card ${locationTypeClass} mb-2">
+            <div class="card-body">
+                <h5>${spotName.value}</h5>
+
+            </div>
+        </div> 
+    `
+    locationsContainer.insertAdjacentHTML('beforeend', locationHtml);
+}
 
 function onSuccess(position){
     mymap = L.map('map').setView([position.coords.latitude, position.coords.longitude], 15);
@@ -61,25 +88,27 @@ formContainer.addEventListener('submit', function(e){
     )
     .setPopupContent(spotName.value)
     .openPopup();
-
-    spotName.value = "";
-
-    if(locationType.value=="1"){
-        locationTypeClass = "bg-danger";
-    }else if(locationType.value=="2"){
-        locationTypeClass = "bg-warning";
-    }else{
-        locationTypeClass = "bg-success";
+    
+    // create an object
+    let location = {
+        'name': spotName.value,
+        'locationType': locationType.value,
+        'location': {
+            'lat': mapEvent.latlng.lat,
+            'lng': mapEvent.latlng.lng
+        }
     }
-    console.log(locationType)
-    let locationHtml = `
-        <div class="card ${locationTypeClass} mb-2">
-            <div class="card-body">
-                <h5>RS. Setia Mitra</h5>
+    // add object to the array
+    locations.push(JSON.stringify(location));
 
-            </div>
-        </div> 
-`
-    locationsContainer.insertAdjacentHTML('beforeend', locationHtml)
+    //store array into the local storage
+    localStorage.setItem('locations', locations)
+
+    console.log(locations);
+
+    renderLocations();
+    
+    resetForm();
 })
+
 
