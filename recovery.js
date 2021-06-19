@@ -2,6 +2,8 @@ if(navigator.geolocation){
     navigator.geolocation.getCurrentPosition(onSuccess, onFailure);
 }  
 
+
+
 const formContainer = document.getElementById('form-container');
 const spotName = document.getElementById('spotName');
 const locationsContainer = document.getElementById('locations')
@@ -19,7 +21,6 @@ const resetForm = function() {
     locationType.value = "";
 
 }
-
 const renderLocations = function(){
     if(locationType.value=="1"){
         locationTypeClass = "bg-danger";
@@ -39,6 +40,41 @@ const renderLocations = function(){
     `
     locationsContainer.insertAdjacentHTML('beforeend', locationHtml);
 }
+
+const getLocations = function(){
+    const data = JSON.parse(localStorage.getItem('locations'));
+    if(data){
+        try {
+                locations = data;
+                locations.forEach(item => {
+                if(item.locationType=="1"){
+                    locationTypeClass = "bg-danger";
+                }else if(item.locationType=="2"){
+                    locationTypeClass = "bg-warning";
+                }else{
+                    locationTypeClass = "bg-success";
+                }
+                
+                let locationHtml = `
+                    <div class="card ${locationTypeClass} mb-2">
+                        <div class="card-body">
+                            <h5>${item.name}</h5>
+            
+                        </div>
+                    </div> 
+                `
+                locationsContainer.insertAdjacentHTML('beforeend', locationHtml);
+            });
+        } catch (error) {
+            console.log("we have an error");
+             console.log(error);
+        }
+        
+    }
+    
+}
+
+getLocations();
 
 function onSuccess(position){
     mymap = L.map('map').setView([position.coords.latitude, position.coords.longitude], 15);
@@ -99,12 +135,10 @@ formContainer.addEventListener('submit', function(e){
         }
     }
     // add object to the array
-    locations.push(JSON.stringify(location));
+    locations.push(location);
 
     //store array into the local storage
-    localStorage.setItem('locations', locations)
-
-    console.log(locations);
+    localStorage.setItem('locations', JSON.stringify(locations) )
 
     renderLocations();
     
