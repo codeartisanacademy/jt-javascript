@@ -10,14 +10,14 @@
     <h1>Arrow Function</h1>
 
     <script>
-        const sayHello = () => {
-            console.log("Hello there"); //function body
-        }
+        const sayHello = () => console.log("Hello there");
+        
 
 
         sayHello();
 
         const add = (x, y) =>{
+            
             console.log(x + y);
         }
 
@@ -35,6 +35,10 @@
 
         // exercise
         function calculateEndPrice(price, discount){
+            console.log(price - (price * (discount/100)));
+        }
+
+        const calculateEndPriceArrow = (price, discount)=>{
             console.log(price - (price * (discount/100)));
         }
 
